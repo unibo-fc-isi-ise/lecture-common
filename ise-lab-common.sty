@@ -1,0 +1,69 @@
+% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+% \usepackage{fancyvrb}
+\usepackage{multicol}
+% \usepackage{caption}
+\usepackage{code-listings}
+\usepackage{wasysym}
+\usepackage[yyyymmdd]{datetime}
+
+\renewcommand{\dateseparator}{}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\renewcommand{\stylemajor}{0}
+\renewcommand{\styleminor}{1}
+\renewcommand{\stylepatch}{0}
+\renewcommand{\styleversion}{\stylemajor.\styleminor.\stylepatch}
+
+\def\theLabN{0}
+\newcommand{\labN}[1]{\def\theLabN{#1}}
+
+% \definecolor{links}{HTML}{0000FF}
+% \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\currentLab}{L\theLabN}
+
+\newcounter{Exercise}
+\newcommand{\startExercise}{\stepcounter{Exercise}}
+\newcommand{\currentExercise}{E\theLabN-\theExercise}
+
+\newcounter{Demo}
+\newcommand{\startDemo}{\stepcounter{Demo}}
+\newcommand{\currentDemo}{D\theLabN-\theDemo}
+
+\newcommand{\courseName}{Intelligent Systems Engineering}
+\newcommand{\courseAcronym}{ISE}
+\newcommand{\moduleN}{3}
+\newcommand{\academicYear}{2021/2022}
+\newcommand{\disi}{Dipartimento di Informatica -- Scienza e Ingegneria}
+\newcommand{\disiShort}{DISI}
+\newcommand{\unibo}{Alma Mater Studiorum---Università di Bologna}
+\newcommand{\uniboShort}{UniBO}
+
+\newcommand{\gcFull}{Giovanni Ciatto}
+\newcommand{\gcShort}{G. Ciatto}
+\newcommand{\gcEmail}{\href{mailto:giovanni.ciatto@unibo.it}{\texttt{giovanni.ciatto@unibo.it}}}
+\newcommand{\aoFull}{Andrea Omicini}
+\newcommand{\aoShort}{A. Omicini}
+\newcommand{\aoEmail}{\href{mailto:andrea.omicini@unibo.it}{\texttt{andrea.omicini@unibo.it}}}
+
+\newcommand{\aea}{A\&A}
+\newcommand{\aealong}{Agent \& Artefact}
+\newcommand{\tucson}{{\sf {T}u{CS}o{N}}}
+\newcommand{\linda}{{\sc {L}inda}}
+\newcommand{\tuprolog}{{{\sf tu}{P}rolog}}
+\newcommand{\jade}{{\sc Jade}}
+\newcommand{\jason}{{Jason}}
+\newcommand{\jadelong}{{\sc J}ava {\sc A}gent {\sc DE}velopment Framework}
+\newcommand{\fipa}{FIPA}
+\newcommand{\acl}{ACL}
+\newcommand{\acllong}{$\mathcal{A}$gent $\mathcal{C}$ommunication $\mathcal{L}$anguage}
+
+\newcommand{\hint}[1]{\hfill{\scriptsize \alert{!} {\color{gray}#1}}}
+\newcommand{\dhint}[1]{{\scriptsize{\color{gray}\dotfill #1}}}
+\newcommand{\fnhint}[1]{{\footnote{\scriptsize{\color{gray}#1}}}}
+\newcommand{\columsHH}[2]{\begin{columns}\begin{column}{.49\linewidth}#1\end{column}\hfill\begin{column}{.49\linewidth}#2\end{column}\end{columns}}
