@@ -6,6 +6,8 @@ on:
 jobs:
   compile:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
 
       - name: Checkout code
@@ -13,11 +15,11 @@ jobs:
           
       - name: Get Version
         id: get-version
-        run: echo "::set-output name=version::$(cat ise-*.sty | python .github/scripts/compute-version.py)"
+        run: echo "version=$(cat ise-*.sty | python .github/scripts/compute-version.py)" >> $GITHUB_OUTPUT
 
       - name: Get Time
         id: current-time
-        run: echo "::set-output name=time::$(date +'%Y-%m-%d-%H-%M')"
+        run: echo "time=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
         
       - name: Zip files to release
         run: zip style.zip *.sty
@@ -34,4 +36,4 @@ jobs:
             ASSETS+=("-a" "$A")
             echo "Releasing $A"
           done
-          hub release create "${ASSETS[@]}" -m "$RELEASE_TAG" "$RELEASE_TAG"
+            gh release create "$RELEASE_TAG" *.zip -t "$RELEASE_TAG"
